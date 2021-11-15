@@ -71,7 +71,7 @@ void tauscheElement(gruppen *element, gruppen *vorElement)
 	nextElement->next = aktElement;
 	
 	if(vorElement != NULL) vorElement->next = nextElement;
-	if(vorElement == erstesElement) erstesElement = aktElement;
+	if(aktElement == erstesElement) erstesElement = nextElement;
 }
 
 void sortierenNachGruppengroesse()
