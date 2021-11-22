@@ -31,6 +31,23 @@ int main()
 	ms1.println();
 	ms2.println();
 
+	// 22 November
+
+	mystring ms3("Mustermann");
+	mystring ms4("Hans");
+
+	mystring ms5;
+	ms5 = ms3 + ms4;
+	cout << "Unser mystring ms5: " << ms5 << endl;
+	ms5 = ms3 + " " + ms4;
+	cout << "Unser mystring ms5: " << ms5 << endl;
+
+	if (ms3 == ms4) cout << "ms3 == ms4" << endl;
+	if (ms3 != ms4) cout << "ms3 != ms4" << endl;
+	if (ms4 == "Hans") cout << "ms4 == Hans" << endl;
+
+	//
+
 	return 0;
 }
 

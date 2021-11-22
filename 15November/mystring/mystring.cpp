@@ -41,6 +41,42 @@ void mystring::setA(const mystring &m)
 	if ( this != &m ) this-> setA(m.a);
 }
 
+// 22 November
+
+mystring& mystring::operator=(const mystring &m)
+{
+	this->setA(m.a);
+	return *this;
+}
+
+mystring mystring::operator+(const mystring &m)
+{
+	mystring temp;
+	temp.a = new char[strlen(this->a) + strlen(m.a) + 1];
+	strcpy(temp.a,this->a);
+	strcat(temp.a,m.a);
+
+	return temp;
+}
+
+bool mystring::operator==(const mystring &m)
+{
+	if (strcmp(this->a,m.a)==0) return true;
+	else  return false;
+}
+
+bool mystring::operator!=(const mystring &m)
+{
+	return !operator==(m);
+}
+
+ostream& operator << (ostream &o, const mystring &m)
+{
+	return o << m.a;
+}
+
+//
+
 void mystring::print()
 {
 	cout << this->a;
