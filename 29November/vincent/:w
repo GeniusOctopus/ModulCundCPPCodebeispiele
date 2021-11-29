@@ -1,0 +1,40 @@
+#include<stdlib.h>
+#include<stdio.h>
+#include<math.h>
+#include<time.h>
+
+#include<GL/gl.h>
+#include<GLFW/glfw3.h>
+
+int main(void)
+{
+	GLFWwindow *window = NULL;
+
+	if (!glfwInit())
+		exit(EXIT_FAILURE);
+	
+	window = glfwCreateWindow(200, 200, "CLOCK", NULL, NULL);
+
+	if(!window)
+	{
+		glfwTerminate();
+		exit(EXIT_FAILURE);
+	}
+
+	glfwMakeContextCurrent(window);
+
+	while(!glfwWindowShouldClose(window))
+	{
+		glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+
+		glfwSwapBuffers(window);
+		glfwPollEvents();
+	}
+
+	glfwDestroyWindow(window);
+	glfwTerminate();
+
+
+	return EXIT_SUCCESS;
+}
+
